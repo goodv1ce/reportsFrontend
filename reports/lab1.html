@@ -1,0 +1,237 @@
+<div id="p1">
+    <h2 style="font-weight: bold; margin: 0 0">
+        "Функціонал додатку:
+    </h2>
+    <h3 style="font-weight: bold; margin: 0.5em 0">Каталог товарів:</h3>
+    <ul>
+        <li>Перелік усіх доступних категорій меблів</li>
+        <li>Пошукове поле для швидкого пошуку певного товару за ключовими словами.</li>
+        <li>Кожен товар представлений зображенням, назвою, коротким описом та ціною.</li>
+        <li>Можливість додавання товару до кошика.</li>
+    </ul>
+
+    <h3 style="font-weight: bold; margin: 0.5em 0">Кошик:</h3>
+    <ul>
+        <li>Список усіх вибраних товарів з можливістю зміни кількості або видалення.</li>
+        <li>Підрахунок загальної вартості товарів у кошику.</li>
+    </ul>
+    <h3 style="font-weight: bold; margin: 0.5em 0">Оформлення замовлення:</h3>
+    <ul>
+        <li>Форма для введення контактних даних та адреси доставки.</li>
+        <li>Підтвердження вибраних товарів</li>
+        <li>Виведення підсумкової інформації перед підтвердженням замовлення."</li>
+    </ul>
+</div>
+
+<div id="p2">
+    <p>
+        <b style="font-size: 1.2em">Тема:</b>
+        Структура HTML-документа. Вибір предметної галузі. Робота з посиланнями, таблицями, зображеннями,
+        списками в HTML-документі.
+    </p>
+    <p>
+        <b style="font-size: 1.2em">Мета:</b> придбати практичні навички роботи з HTML-документом, таблицями,
+        зображеннями, посиланнями, списками, формами. Створити шаблон звітного HTML-документом для відображення
+        результатів роботи всіх лабораторних робіт.
+    </p>
+
+    <h3 style="font-size: 1.2em; margin: 0.5em 0">Місце розташування:</h3>
+    <ul>
+        <li>
+            Дизайн головної сторінки власного проекту:
+            <a href="https://www.figma.com/file/Ef740KdGcZgv3IBvTDR8kX/MyApplication?type=design&node-id=2-2&mode=design&t=8gsTCJXNFqiupbkR-0"
+               target="_blank">click</a>
+        </li>
+        <li>
+            Github репозиторій резюме:
+            <a href="https://github.com/goodv1ce/resumeFrontend" target="_blank">click</a>
+        </li>
+        <li>
+            Github репозиторій власного проекту:
+            <a href="https://github.com/goodv1ce/frontendApp" target="_blank">click</a>
+        </li>
+        <li>
+            Github репозиторій сторінки зі звітами:
+            <a href="https://github.com/goodv1ce/reportsFrontend" target="_blank">click</a>
+        </li>
+    </ul>
+</div>
+
+<div id="p3-btn">
+    <button class="side-btn" onclick="lab1LoadThirdArticlePart1()">HTML-код ТАБЛИЦЬ</button>
+    <button class="side-btn" onclick="lab1LoadThirdArticlePart2()">HTML-код ФОРМИ</button>
+    <button class="side-btn" onclick="lab1LoadThirdArticlePart3()">HTML-код ЗОБРАЖЕННЯ</button>
+    <button class="side-btn" onclick="lab1BackAndLoadSidebar()">Назад</button>
+</div>
+
+<div id="p3-1">
+    <h3>HTML-таблиця</h3>
+    <p>Основні теги для створення таблиці в HTML включають наступні:</p>
+    <ol>
+        <li>
+            <b>'&lt;table&gt;'</b>: Визначає саму таблицю.
+        </li>
+        <li>
+            <b>'&lt;tr&gt;'</b>: Визначає рядок у таблиці.
+        </li>
+        <li>
+            <b>'&lt;th&gt;'</b>: Визначає заголовок стовпця. Зазвичай використовується для першого рядка або
+            першого стовпця таблиці.
+        </li>
+        <li>
+            <b>'&lt;td&gt;'</b>: Визначає окрему комірку в таблиці.
+        </li>
+    </ol>
+    <p>Приклад коду таблиці:</p>
+    <pre style="background-color: #f4f4f4">
+                <code>
+                &lt;table&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;Ячійка 1&lt;/td&gt;
+                        &lt;td&gt;Ячійка 2&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;Ячійка 3&lt;/td&gt;
+                        &lt;td&gt;Ячійка 4&lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+                </code>
+            </pre>
+
+    <p>Цей код виглядатиме на сторінці ось так:</p>
+
+    <table>
+        <tr>
+            <td>Cell 1</td>
+            <td>Cell 2</td>
+        </tr>
+        <tr>
+            <td>Cell 3</td>
+            <td>Cell 4</td>
+        </tr>
+    </table>
+</div>
+
+<div id="p3-2">
+    <h3>HTML-форма</h3>
+    <p>Основні теги для створення форми в HTML включають наступні:</p>
+    <ol>
+        <li>
+            <b>'&lt;form&gt;'</b>: Визначає форму і вказує на маршрут, до якого будуть надіслані дані після
+            натискання кнопки "Надіслати".
+        </li>
+        <li>
+            <b>'&lt;label&gt;'</b>: Визначає мітку для керуючого елемента форми.
+        </li>
+        <li>
+            <b>'&lt;input&gt;'</b>: Визначає поля для введення тексту, адреси електронної пошти та радіо-кнопки.
+        </li>
+        <li>
+            <b>'&lt;textarea&gt;'</b>: Визначає поле для введення багаторядкового тексту.
+        </li>
+        <li>
+            <b>'&lt;submit&gt;'</b>: Визначає кнопку для надсилання даних форми.
+        </li>
+    </ol>
+    <p>Приклад HTML-коду форми:</p>
+    <pre style="background-color: #f4f4f4">
+        <code>
+            &lt;form&gt;
+                &lt;label for="name"&gt;Ім'я:&lt;/label&gt;&lt;br&gt;
+                &lt;input type="text" id="name" name="name"&gt;&lt;br&gt;
+
+                &lt;label for="email"&gt;Електронна пошта:&lt;/label&gt;&lt;br&gt;
+                &lt;input type="email" id="email" name="email"&gt;&lt;br&gt;
+
+                &lt;label for="message"&gt;Повідомлення:&lt;/label&gt;&lt;br&gt;
+                &lt;textarea id="message" name="message" rows="4" cols="50"&gt;&lt;/textarea&gt;&lt;br&gt;
+
+                &lt;label&gt;Стать:&lt;/label&gt;&lt;br&gt;
+                &lt;input type="radio" id="male" name="gender" value="male"&gt;
+                &lt;label for="male"&gt;Чоловіча&lt;/label&gt;&lt;br&gt;
+                &lt;input type="radio" id="female" name="gender" value="female"&gt;
+                &lt;label for="female"&gt;Жіноча&lt;/label&gt;&lt;br&gt;
+
+                &lt;input type="submit" value="Надіслати"&gt;
+            &lt;/form&gt;
+        </code>
+    </pre>
+
+    <p>Цей код виглядатиме на сторінці ось так:</p>
+
+    <form>
+        <label for="name">Ім'я:</label><br>
+        <input type="text" id="name" name="name"><br>
+
+        <label for="email">Електронна пошта:</label><br>
+        <input type="email" id="email" name="email"><br>
+
+        <label for="message">Повідомлення:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50"></textarea><br>
+
+        <label>Стать:</label><br>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Чоловіча</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Жіноча</label><br>
+
+        <input type="submit" value="Надіслати">
+    </form>
+</div>
+
+<div id="p3-3">
+    <h3>HTML-зображення</h3>
+    <p>Основний тег для вставки зображення в HTML:</p>
+    <ol>
+        <li>
+            <b>'&lt;img&gt;'</b>: Визначає тег для вставки зображення.
+        </li>
+    </ol>
+    <p>Приклад HTML-коду для вставки зображення:</p>
+    <pre style="background-color: #f4f4f4">
+                <code>
+                    &lt;img src="image.jpg" alt="Опис зображення"&gt;
+                </code>
+            </pre>
+
+    <p>Цей код виглядатиме на сторінці ось так:</p>
+
+    <img src="img/apple.jpg" alt="Опис зображення" style="width: 200px">
+</div>
+
+<div id="lab1-conclusion">
+    <h2>Висновок з лабораторної роботи</h2>
+
+    <p>
+        Під час виконання лабораторної роботи на тему "Структура HTML-документа. Вибір предметної галузі. Робота
+        з посиланнями, таблицями, зображеннями, списками в HTML-документі" ми здобули практичні навички роботи з
+        різноманітними елементами HTML.
+    </p>
+
+    <p>
+        Основною метою роботи було створення шаблону звітного HTML-документу, який відображає результати усіх
+        лабораторних робіт.
+    </p>
+
+    <p>
+        Під час виконання роботи ми ознайомились із структурою HTML-документа та його основними елементами,
+        такими як теги, атрибути та їх призначення. Ми також навчились створювати таблиці для відображення даних
+        у впорядкованому вигляді, використовувати зображення для ілюстрації контенту та посилання для навігації
+        між різними сторінками.
+    </p>
+
+    <p>
+        Крім того, ми вивчили створення списків для представлення інформації у вигляді маркованих або нумерованих
+        переліків. Також ми оволоділи навичками роботи з формами для збору даних від користувачів, включаючи
+        введення тексту, вибір опцій та надсилання даних.
+    </p>
+
+    <p>
+        У результаті виконання лабораторної роботи ми створили шаблон звітного HTML-документу, який можна
+        використовувати для відображення результатів усіх подальших лабораторних робіт. Цей шаблон допоможе нам
+        структурувати та організувати інформацію зручним та зрозумілим способом для подальшого аналізу та
+        оцінки.
+    </p>
+</div>
+
+
