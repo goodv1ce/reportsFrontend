@@ -25,6 +25,10 @@ function handleLabChange(value) {
     let cases = {
         "lab1": function () {
             fetchContent(pathInitContent, "lab1-sidebar", "side-btn-wrapper")
+        },
+
+        "lab2": function () {
+            fetchContent(pathInitContent, "lab2-sidebar", "side-btn-wrapper")
         }
     }
     cases[value]();
@@ -67,4 +71,50 @@ function lab1BackAndLoadSidebar() {
 
 function lab1LoadFourthArticle() {
     fetchContent(pathLab1, "lab1-conclusion", "output");
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+// ------------------------------------------------------ LAB2 ---------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
+
+const pathLab2 = "reports/lab2.html"
+
+function lab2LoadFirstArticle() {
+    fetchContent(pathLab2, "p1", "output");
+}
+
+function lab2LoadSecondArticle() {
+    fetchContent(pathLab2, "p2", "output");
+}
+
+function lab2LoadThirdArticle() {
+    fetchContent(pathLab2, "p3-btn", "side-btn-wrapper");
+}
+
+function lab2LoadThirdArticlePart1() {
+    fetchContent(pathLab2, "p3-1", "output");
+}
+
+function lab2LoadThirdArticlePart2() {
+    fetchContent(pathLab2, "p3-2", "output");
+}
+
+function lab2LoadThirdArticlePart3() {
+    fetchContent(pathLab2, "p3-3", "output");
+}
+
+function lab2LoadFourthArticlePart4() {
+    fetchContent(pathLab2, "p3-4", "output");
+}
+
+function lab2BackAndLoadSidebar() {
+    fetchContent(pathInitContent, "lab2-sidebar", "side-btn-wrapper");
+}
+
+function lab2LoadFourthArticle() {
+    fetchContent(pathLab2, "p4", "output");
+}
+
+function lab2LoadFifthArticle() {
+    fetchContent(pathLab2, "lab2-conclusion", "output");
 }
