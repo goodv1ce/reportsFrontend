@@ -63,6 +63,7 @@ header {
     padding: 25px;
     border: 1px solid #aaa;
     text-align: left;
+    width: 100%;
 }
 
 .wrapper {;

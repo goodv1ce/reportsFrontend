@@ -120,3 +120,31 @@ const pathLab3 = "reports/lab3.html"
 function lab3LoadFirstArticle() {
     fetchContent(pathLab3, "p1", "output");
 }
+
+function lab3LoadSecondArticle() {
+    fetchContent(pathLab3, "p2", "output")
+}
+
+function lab3LoadThirdArticle() {
+    fetchContent(pathLab3, "p3-btn", "side-btn-wrapper");
+}
+
+function lab3LoadThirdArticlePart1() {
+    fetchContent(pathLab3, "p3-1", "output");
+}
+
+function lab3LoadThirdArticlePart2() {
+    fetchContent(pathLab3, "p3-2", "output");
+}
+
+function lab3LoadThirdArticlePart3() {
+    fetchContent(pathLab3, "p3-3", "output");
+}
+
+function lab3LoadFourthArticlePart4() {
+    fetchContent(pathLab3, "p3-4", "output");
+}
+
+function lab3BackAndLoadSidebar() {
+    fetchContent(pathInitContent, "lab3-sidebar", "side-btn-wrapper");
+}
