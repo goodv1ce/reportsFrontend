@@ -22,16 +22,8 @@ function changeCurrentReport(src) {
 }
 
 function handleLabChange(value) {
-    let cases = {
-        "lab1": function () {
-            fetchContent(pathInitContent, "lab1-sidebar", "side-btn-wrapper")
-        },
-
-        "lab2": function () {
-            fetchContent(pathInitContent, "lab2-sidebar", "side-btn-wrapper")
-        }
-    }
-    cases[value]();
+    let sourceId = value + "-sidebar"
+    fetchContent(pathInitContent, sourceId, "side-btn-wrapper");
 }
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -117,4 +109,14 @@ function lab2LoadFourthArticle() {
 
 function lab2LoadFifthArticle() {
     fetchContent(pathLab2, "lab2-conclusion", "output");
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+// ------------------------------------------------------ LAB3 ---------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
+
+const pathLab3 = "reports/lab3.html"
+
+function lab3LoadFirstArticle() {
+    fetchContent(pathLab3, "p1", "output");
 }
