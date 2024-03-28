@@ -148,3 +148,23 @@ function lab3LoadFourthArticlePart4() {
 function lab3BackAndLoadSidebar() {
     fetchContent(pathInitContent, "lab3-sidebar", "side-btn-wrapper");
 }
+
+function lab3LoadFourthArticle() {
+    fetchContent(pathLab3, "p4-sidebar", "side-btn-wrapper")
+}
+
+function lab3LoadFourthArticlePart1() {
+    fetchContent(pathLab3, "p4-1", "output");
+}
+
+function lab3LoadFourthArticlePart2() {
+    fetchContent(pathLab3, "p4-2", "output");
+}
+
+function lab3LoadFourthArticlePart3() {
+    fetchContent(pathLab3, "p4-3", "output");
+}
+
+function lab3LoadConclusions() {
+    fetchContent(pathLab3, "lab3-conclusions", "output")
+}

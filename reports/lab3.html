@@ -402,5 +402,327 @@
         </div>
     </div>
     </textarea>
+</div>
 
+<div id="p4-sidebar">
+    <button class="side-btn" onclick="lab3LoadFourthArticlePart1()">Зовнішній вигляд сторінки</button>
+    <button class="side-btn" onclick="lab3LoadFourthArticlePart2()">HTML-код</button>
+    <button class="side-btn" onclick="lab3LoadFourthArticlePart3()">CSS-код сторінки</button>
+    <button class="side-btn" onclick="lab3BackAndLoadSidebar()">Назад</button>
+</div>
+
+<div id="p4-1">
+    <h1>Зовнішній вигляд сторінки</h1>
+    <img src="img/lab3/my-site-part1.png" alt="" style="width: 98%">
+    <img src="img/lab3/my-site-part2.png" alt="" style="width: 98%">
+</div>
+
+<div id="p4-2">
+    <h1>HTML-код сторінки</h1>
+    <textarea readonly style="font-family: monospace; background-color: #f4f7f8; border-left: 6px solid #558abb;
+                color: #4d4e53; width: 90%; padding: 10px 10px 0; height: 400px; margin: 20px 0">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Навчання - ІТ</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+<header>
+    <div class="top-container">
+        <div id="left-block-logo-caption">
+            <div id="logo">
+                <img src="img/it-icon.png" alt="">
+            </div>
+            <div id="caption">
+                Навчальний центр - ІТ
+            </div>
+        </div>
+
+        <div id="info">
+            Ми працюємо Пн-Пт з 10:00 до 19:00 Сб-Нд: Вихідний
+        </div>
+    </div>
+    <div class="nav-container">
+        <button>Головна</button>
+        <button>Акції</button>
+        <button>Курси</button>
+        <button>Про центр</button>
+        <button>Контакти</button>
+        <button>Ціни</button>
+        <button>Блог</button>
+    </div>
+</header>
+
+<main>
+    <div class="main-info-container">
+        <div class="courses-info">
+            <div><span>Курси інженерної графіки</span></div>
+            <div><span>Курси компю'терного моделювання</span></div>
+            <div><span>Курси програмування</span></div>
+            <div><span>Курси бухгалтерів</span></div>
+            <div><span>Курси системного адміністрування</span></div>
+            <div><span>Комп'ютер для початківців</span></div>
+            <div><span>Курси створення сайтів</span></div>
+            <div><span>Просування web-сайтів (SEO)</span></div>
+            <div><span>Курси менеджерів</span></div>
+            <div><span>Курси графіки</span></div>
+            <div><span>Створення сайту</span></div>
+            <div><span>Курси дизайну</span></div>
+        </div>
+        <div class="study-form">
+            <div style="font-size: 1.5em; font-weight: bold; margin: 10px 0; display: flex; align-items: center">
+                <img src="img/people-icon.png" alt="" style="height: 1.5em; margin-right: 15px;">
+                Нова форма навчання
+            </div>
+            <div style="font-size: 1.15em; font-weight: bold; margin: 20px 0; display: flex; align-items: center">
+                <img src=img/question-mark.png alt="" style="height: 1.5em; margin-right: 15px;">
+                Вибір будь-якого часу курсу.
+            </div>
+            <p style="text-indent: 10px">Проведення занять безпосередньо у слухача <b>на дому або в офісі</b></p>
+            <div style="font-size: 1.15em; font-weight: bold; margin: 20px 0; display: flex; align-items: center">
+                <img src=img/question-mark.png alt="" style="height: 1.5em; margin-right: 15px;">
+                Навчання за індивідуальною програмою
+            </div>
+            <p style="text-indent: 10px">
+                Ви вчите тільки те, що вам потрібно. Програма підбирається під вас!
+            </p>
+            <div style="font-size: 1.15em; font-weight: bold; margin: 20px 0; display: flex; align-items: center">
+                <img src=img/question-mark.png alt="" style="height: 1.5em; margin-right: 15px;">
+                Безкоштовне встановлення ПЗ на ваш ноутбук або комп'ютер.
+            </div>
+            <p style="text-indent: 10px">
+                Викладач встановить, а також налаштує потрібну програму для виконання домашнього завдання.
+            </p>
+        </div>
+        <div class="find-course">
+            <div style="font-size: 1.5em; font-weight: bold; margin: 10px 0;">
+                Знайти курс по інтересам
+            </div>
+            <p style="font-size: 1.1em; margin: 10px 0">
+                Скористайтеся пошуком, щоб знайти потрібний вам курс або подивіться <a href="" id="link1">всі курси</a>
+            </p>
+            <input type="text" id="course-search" placeholder="Пошук курсів...">
+        </div>
+    </div>
+
+    <div class="additional-info">
+        <div style="font-size: 1.8em; font-weight: bold; margin: 20px 0; align-self: center">Курси web-програмування в
+            Києві.
+        </div>
+        <div style="display: flex">
+            <img src="img/web-prog.jpg" alt="" style="width: 30%; margin-left: 20px">
+            <p class="additional-info-paragraph">
+                Ми шукаємо всіх тих, кому цікавий світ програмування! Хочете займатися розробкою програмного
+                забезпечення
+                і побудовою web-сайтів? А, може ви вже робите це все і жадаєте додаткових знань, або вирішили підвищити
+                свою кваліфікацію? Не біда, якщо ніколи і не пробували себе в подібному - команда ІТ готова надавати
+                свої послуги людям будь-якого рівня знань. Якщо наші клієнти новачки, то ми почнемо заняття з основ, а
+                якщо ж просунуті - то вони починатимуть навчання з більш складного матеріалу, при цьому не зупиняючись
+                на тому, що їм давно відомо. Теми для проведення занять дозволено вибирати на свій розсуд.
+            </p>
+        </div>
+    </div>
+</main>
+
+<footer>
+        <button>Ми на мапі</button>
+        <button>Зв'язок з нами</button>
+        <button>Корисні посилання</button>
+        <button>Популярне на блозі</button>
+</footer>
+
+</body>
+</html>
+    </textarea>
+</div>
+
+<div id="p4-3">
+    <h1>CSS-код сторінки</h1>
+    <textarea readonly style="font-family: monospace; background-color: #f4f7f8; border-left: 6px solid #558abb;
+                color: #4d4e53; width: 90%; padding: 10px 10px 0; height: 400px; margin: 20px 0">
+header {
+    height: 150px;
+    background-color: #eeeeee;
+    display: flex;
+    flex-direction: column;
+}
+
+#left-block-logo-caption {
+    display: flex;
+    width: 40%;
+    justify-content: left;
+    align-items: center;
+}
+
+#caption {
+    margin-left: 2%;
+    font-size: 1.5em;
+    color: #319dd2;
+    font-weight: bold;
+}
+
+
+header .top-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 20px;
+    align-items: center;
+    height: 30%;
+}
+
+header #logo {
+    height: 50px;
+    width: 50px;
+}
+
+#info {
+    color: #1f2286;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.nav-container {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0;
+}
+
+.nav-container > button {
+    width: 10%;
+    height: 80%;
+    color: white;
+    background-color: #39a4d7;
+    border: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.nav-container > button:hover {
+    background-color: #267999;
+}
+
+.main-info-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.main-info-container > div {
+    width: 30%;
+    height: 550px;
+    margin: 20px 10px;
+    padding: 10px 30px;
+}
+
+.courses-info {
+    color: white;
+    background-color: #319ed3;
+}
+
+.courses-info > div {
+    font-size: 1.2em;
+    margin: 20px 0;
+}
+
+.courses-info > div > span {
+    padding-bottom: 5px;
+    border-bottom: #36b9f7 1px solid;
+    cursor: pointer;
+}
+
+.study-form {
+    background-color: #ffa200;
+}
+
+.find-course {
+    background-color: #cb3536;
+    color: #fcc1ae;
+}
+
+#link1:link {
+    color: #f77973;
+}
+
+#link1:visited {
+    color: #f77973;
+}
+
+#course-search {
+    width: 90%;
+    height: 30px;
+    border: #cfb3b4 5px solid;
+    border-radius: 10px;
+    padding: 5px 10px
+}
+
+#course-search::placeholder {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.additional-info {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.additional-info-paragraph {
+    margin: 0 20px;
+    font-size: 1.5em;
+    align-self: center;
+}
+
+footer {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer > button {
+    width: 15%;
+    margin: 0 20px;
+    height: 50%;
+    background-color: #eeeeee;
+    border-radius: 10px;
+    border: #e3e3e3 5px solid;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #1e6e79;
+    font-weight: bold;
+}
+    </textarea>
+</div>
+
+<div id="lab3-conclusions">
+    <h2>Висновок з лабораторної роботи</h2>
+
+    <p>
+        У цій лабораторній роботі ми зосередилися на верстці HTML-документу, використанні блокової верстки та
+        засобах CSS і Flexbox. Під час виконання роботи ми набули практичних навичок створення структури
+        веб-сторінок за допомогою HTML, розуміння ролі блокової верстки в організації вмісту сторінок та
+        використання CSS для оформлення цього вмісту.
+    </p>
+
+    <p>
+        Особливу увагу ми приділили Flexbox, потужному інструменту CSS для створення гнучких та адаптивних
+        макетів веб-сторінок. Вивчення Flexbox дозволило нам зрозуміти, як ефективно розташовувати та
+        організовувати елементи на сторінці, забезпечуючи їх адаптивне розміщення на різних пристроях і екранах.
+    </p>
+
+    <p>
+        Крім того, ми також дослідили можливості CSS для стилізації тексту, введеного користувачем у поля вводу.
+        Це важливий аспект веб-дизайну, оскільки дозволяє покращити взаємодію користувача з веб-сайтом та
+        зробити введений текст більш помітним і зрозумілим.
+    </p>
+
+    <p>
+        У результаті виконання лабораторної роботи ми отримали цінний досвід у створенні та стилізації
+        веб-сторінок, який буде корисним для подальшого розвитку навичок у веб-розробці.
+    </p>
 </div>
