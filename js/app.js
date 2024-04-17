@@ -168,3 +168,28 @@ function lab3LoadFourthArticlePart3() {
 function lab3LoadConclusions() {
     fetchContent(pathLab3, "lab3-conclusions", "output")
 }
+
+// ---------------------------------------------------------------------------------------------------------------------
+// ------------------------------------------------------ LAB3 ---------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
+const pathLab4 = "reports/lab4.html"
+
+function lab4LoadFirstArticle() {
+    fetchContent(pathLab4, "p1", "output");
+}
+
+function lab4LoadSecondArticle() {
+    fetchContent(pathLab4, "p2", "output");
+}
+
+function lab4LoadThirdArticle() {
+    fetchContent(pathLab4, "p3", "output");
+}
+
+function lab4LoadFourthArticle() {
+    fetchContent(pathLab4, "p4", "output");
+}
+
+function lab4LoadConclusions() {
+    fetchContent(pathLab4, "lab4-conclusions", "output")
+}

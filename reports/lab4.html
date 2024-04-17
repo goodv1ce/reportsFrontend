@@ -1,0 +1,297 @@
+<div id="p1">
+    <p>
+        <b style="font-size: 1.2em">Тема:</b>
+        Адаптивна верстка. Медіа-запити. Метатег viewport. Стратегія "Mobile first".
+    </p>
+    <b style="font-size: 1.2em">Мета:</b>
+    <ul>
+        <li>
+            розробити інтерфейс, який зручно відображається на різних пристроях, включаючи комп'ютери, планшети та
+            смартфони.
+        </li>
+    </ul>
+
+    <h3 style="font-size: 1.2em; margin: 0.5em 0">Місце розташування:</h3>
+    <ul>
+        <li>
+            Github репозиторій власного проекту:
+            <a href="https://github.com/goodv1ce/frontendApp" target="_blank">click</a>
+        </li>
+        <li>
+            Github репозиторій сторінки зі звітами:
+            <a href="https://github.com/goodv1ce/reportsFrontend" target="_blank">click</a>
+        </li>
+    </ul>
+</div>
+
+<div id="p2">
+    <h3>Верстка десктопної версії</h3>
+    <p>
+        Так як сайт з самого початку розроблявся під десктопну версію, вносити велику кількість змін не було потреби.
+        Але в зв'язку додавання адаптивної верстки, я вирішив, що буде доцільним винесення деяких налаштувань в окремий
+        блок з використанням медіа-запиту. Таким чином, можна уникнути можливого накладання стилів та помилок.
+    </p>
+    <p>
+        В блок з медіа-запитом були винесені стилі для задання розмірів деяких елементів, а також вирівнювання у
+        flexbox. Також були змінені розміри шрифтів.
+    </p>
+    <h3>Скріншот десктопної версії</h3>
+    <img src="img/lab4/desktop-version.png" alt="" style="width: 100%">
+    <h3>Програмний CSS-код для header:</h3>
+    <textarea readonly style="font-family: monospace; background-color: #f4f7f8; border-left: 6px solid #558abb;
+                color: #4d4e53; width: 90%; padding: 10px 10px 0; height: 500px; ">
+@media screen and (min-width: 992px) {
+    .top-btn-wrapper {
+        height: 20px;
+    }
+
+    .search-bar-wrapper .align-wrapper {
+        width: 55%;
+    }
+
+    .top-btn-wrapper .buttons a {
+        font-size: 1em;
+    }
+
+    .search-bar-wrapper {
+        height: 90px;
+    }
+
+    .logo-wrapper {
+        height: 90px;
+        width: 90px;
+    }
+
+    .search {
+        height: 50%;
+        width: 50%;
+    }
+
+    .align-wrapper {
+        justify-content: space-between;
+    }
+
+    .search-bar-actions {
+        height: 43px;
+        width: 100px;
+    }
+
+    .search-form > input {
+        font-size: 1em;
+    }
+}
+    </textarea>
+
+    <h3>Програмний CSS-код для main:</h3>
+    <textarea readonly style="font-family: monospace; background-color: #f4f7f8; border-left: 6px solid #558abb;
+                color: #4d4e53; width: 90%; padding: 10px 10px 0; height: 225px; ">
+@media screen and (min-width: 992px) {
+    .categories-wrapper {
+        width: 40%;
+    }
+
+    .category-wrapper {
+        width: 30%;
+    }
+
+    main > article {
+        width: 50%;
+    }
+}
+    </textarea>
+</div>
+
+<div id="p3">
+    <h3>Верстка планшетної версії</h3>
+    <p>
+        Під час розробки планшетної версії, необхідно було внести набагато більше змін. Завдяки використанню флексбоксів
+        та гумової верстки, елементи не вилазили одне на одного, але проблема була в тому, що екран став меншим, тому
+        необхідно було збільшити розмір елементів, а також розташувати їх ближче одне до одного.
+    </p>
+    <h3>Скріншот планшетної версії</h3>
+    <img src="img/lab4/tablet-version.png" alt="" style="width: 50%">
+    <h3>Програмний CSS-код для header:</h3>
+    <textarea readonly style="font-family: monospace; background-color: #f4f7f8; border-left: 6px solid #558abb;
+                color: #4d4e53; width: 90%; padding: 10px 10px 0; height: 500px; ">
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .top-btn-wrapper {
+        height: 20px;
+    }
+
+    .search-bar-wrapper .align-wrapper {
+        justify-content: space-between;
+        width: 80%;
+    }
+
+    .top-btn-wrapper .buttons a {
+        font-size: 1.05em;
+    }
+
+    .search-bar-wrapper {
+        height: 120px;
+    }
+
+    .logo-wrapper {
+        height: 120px;
+        width: 120px;
+    }
+
+    .search {
+        height: 50%;
+        width: 70%;
+        padding: 0 30px;
+    }
+
+    .search-form > input {
+        font-size: 1.1em;
+    }
+
+    .search-bar-actions {
+        height: 50%;
+        width: 20%;
+    }
+
+    .search-bar-actions a {
+        font-size: 1.5em;
+    }
+}
+    </textarea>
+
+    <h3>Програмний CSS-код для main:</h3>
+    <textarea readonly style="font-family: monospace; background-color: #f4f7f8; border-left: 6px solid #558abb;
+                color: #4d4e53; width: 90%; padding: 10px 10px 0; height: 225px; ">
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .categories-wrapper {
+        width: 70%;
+    }
+
+    .category-wrapper {
+        width: 30%;
+    }
+
+    main > article {
+        width: 80%;
+    }
+}
+    </textarea>
+</div>
+
+<div id="p4">
+    <h3>Верстка планшетної версії</h3>
+    <p>
+        Під час розробки мобільної версії виникли ті ж самі проблеми, що і під час верстки для планшету. Елементи
+        небхідно було зробити ще більшими, а також поставити їх ближче одне до одного. В таблицях, необіхдно було
+        відображати по 2 елементи на рядок, а не по 3, адже вони тоді були дуже маленькими.
+    </p>
+    <h3>Скріншот мобільної версії</h3>
+    <img src="img/lab4/mobile-version.png" alt="" style="width: 50%">
+
+    <h3>Програмний CSS-код для header:</h3>
+    <textarea readonly style="font-family: monospace; background-color: #f4f7f8; border-left: 6px solid #558abb;
+                color: #4d4e53; width: 90%; padding: 10px 10px 0; height: 500px; ">
+@media screen and (max-width: 768px) {
+    .top-btn-wrapper {
+        height: 25px;
+    }
+
+    .search-bar-wrapper .align-wrapper {
+        width: 95%;
+        justify-content: center;
+    }
+
+    .top-btn-wrapper .buttons a {
+        font-size: 0.8em;
+    }
+
+    .search-bar-wrapper {
+        height: 60px;
+    }
+
+    .logo-wrapper {
+        height: 50px;
+        width: 50px;
+    }
+
+    .search {
+        height: 60%;
+        width: 70%;
+        padding: 0 15px;
+    }
+
+    .search-bar-actions {
+        height: 40%;
+        width: 20%;
+    }
+
+    .search-form input {
+        width: 80%;
+        height: 100%;
+    }
+
+    .submit-search-btn {
+        height: 50%;
+        width: 25%;
+    }
+
+    .search-form > input {
+        font-size: 0.75em;
+    }
+}
+    </textarea>
+
+    <h3>Програмний CSS-код для main:</h3>
+    <textarea readonly style="font-family: monospace; background-color: #f4f7f8; border-left: 6px solid #558abb;
+                color: #4d4e53; width: 90%; padding: 10px 10px 0; height: 225px; ">
+@media screen and (max-width: 768px) {
+    .categories-wrapper {
+    width: 90%;
+    }
+
+    .category-wrapper {
+    width: 45%;
+    }
+
+    main > article {
+    width: 85%;
+    }
+}
+    </textarea>
+    <h3>Програмний CSS-код для footer:</h3>
+    <textarea readonly style="font-family: monospace; background-color: #f4f7f8; border-left: 6px solid #558abb;
+                color: #4d4e53; width: 90%; padding: 10px 10px 0; height: 200px; ">
+@media screen and (max-width: 768px) {
+    .footer-info-wrapper {
+        justify-content: center;
+    }
+
+    .footer-info p {
+        font-size: 0.75em;
+    }
+
+    .footer-info {
+        margin: 0 5px;
+    }
+}
+    </textarea>
+</div>
+
+<div id="lab4-conclusions">
+    <h2>Висновок з лабораторної роботи</h2>
+
+    <p>
+        У цій лабораторній роботі я досліджував ключові аспекти адаптивної верстки та її важливість у сучасному
+        веб-дизайні. Використовуючи медіа-запити та CSS-правила, я створив десктопну, планшетну та мобільну версії
+        веб-сайту, які забезпечують оптимальний перегляд на різних пристроях.
+    </p>
+
+    <p>
+        У звіті я докладно пояснив процес створення кожної версії, розкривши стратегії використання
+        медіа-запитів та метатегу viewport. Кожна версія сайту була адаптована для оптимального відображення на різних
+        екранах, забезпечуючи зручний користувацький досвід.
+    </p>
+
+    <p>
+        Під час розробки я також використав логічні оператори для точного контролю над відображенням елементів на
+        різних пристроях. Звітний документ був оформлений відповідно до вимог.
+    </p>
+</div>
