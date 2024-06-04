@@ -2,6 +2,7 @@
 // --------------------------------------------------- GENERAL ---------------------------------------------------------
 // ---------------------------------------------------------------------------------------------------------------------
 
+
 const pathInitContent = "reports/init-content.html"
 
 function fetchContent(url, sourceId, targetId) {
@@ -15,6 +16,16 @@ function fetchContent(url, sourceId, targetId) {
     }
     xhr.open("GET", url, true);
     xhr.send();
+}
+
+function updateDivContentWithFunction(targetId, contentFunction) {
+    const content = contentFunction();
+    const targetDiv = document.getElementById(targetId);
+    if (targetDiv) {
+        targetDiv.innerHTML = content;
+    } else {
+        console.error(`Div with id "${targetId}" not found.`);
+    }
 }
 
 function changeCurrentReport(src) {
@@ -170,7 +181,7 @@ function lab3LoadConclusions() {
 }
 
 // ---------------------------------------------------------------------------------------------------------------------
-// ------------------------------------------------------ LAB3 ---------------------------------------------------------
+// ------------------------------------------------------ LAB4 ---------------------------------------------------------
 // ---------------------------------------------------------------------------------------------------------------------
 const pathLab4 = "reports/lab4.html"
 
@@ -193,3 +204,80 @@ function lab4LoadFourthArticle() {
 function lab4LoadConclusions() {
     fetchContent(pathLab4, "lab4-conclusions", "output")
 }
+
+// ---------------------------------------------------------------------------------------------------------------------
+// ------------------------------------------------------ LAB4 ---------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
+const pathLab5 = "reports/lab5.html"
+
+function lab5LoadFirstArticle() {
+    fetchContent(pathLab5, "p1", "output");
+}
+
+function lab5LoadSecondArticle() {
+    fetchContent(pathLab5, "p2", "output")
+}
+
+function lab5LoadThirdArticle() {
+    fetchContent(pathLab5, "p3-btn", "side-btn-wrapper");
+}
+
+function lab5LoadFourthArticle() {
+    fetchContent(pathLab5, "p4", "output");
+}
+
+function lab5LoadConclusions() {
+    fetchContent(pathLab5, "lab5-conclusions", "output")
+}
+
+function lab5BackAndLoadSidebar() {
+    fetchContent(pathInitContent, "lab5-sidebar", "side-btn-wrapper");
+}
+
+function lab5GenArr() {
+    let genArrFunction = () => generateRandomArray(100);
+    updateDivContentWithFunction("output", genArrFunction());
+}
+
+function lab5LoadThirdArticlePart2() {
+    fetchContent(pathInitContent, "p2-2", "side-btn-wrapper");
+}
+
+function lab5LoadThirdArticlePart3() {
+    fetchContent(pathInitContent, "p2-3", "side-btn-wrapper");
+}
+
+function lab5LoadThirdArticlePart4() {
+    fetchContent(pathInitContent, "p2-4", "side-btn-wrapper");
+}
+
+function generateRandomArray(length) {
+    let array = [];
+    for (let i = 0; i < length; i++) {
+        array.push(Math.floor(Math.random() * 100));
+    }
+    return array
+}
+
+function moveMinToFront(array) {
+    let minIndex = 0;
+    for (let i = 1; i < array.length; i++) {
+        if (array[i] < array[minIndex]) {
+            minIndex = i;
+        }
+    }
+    const minValue = array[minIndex];
+    array.splice(minIndex, 1);
+    array.unshift(minValue);
+}
+
+function selectionSort(array) {
+    for (let i = 0; i < array.length - 1; i++) {
+        moveMinToFront(array, i);
+    }
+}
+
+const arr = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5];
+console.log("Before sorting:", arr);
+selectionSort(arr);
+console.log("After sorting:", arr)
