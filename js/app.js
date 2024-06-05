@@ -607,3 +607,36 @@ function checkCode() {
     }
 }
 
+// ---------------------------------------------------------------------------------------------------------------------
+// ------------------------------------------------------ LAB8 ---------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
+const pathLab8 = "reports/lab8.html"
+
+function lab8LoadFirstArticle() {
+    fetchContent(pathLab8, "p1", "output");
+}
+
+function lab8LoadSecondArticle() {
+    fetchContent(pathLab8, "p2", "output");
+}
+
+function lab8LoadThirdArticle() {
+    fetchContent(pathLab8, "p3", "output");
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+// ------------------------------------------------------ LAB9 ---------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
+const pathLab9 = "reports/lab9.html"
+
+function lab9LoadFirstArticle() {
+    fetchContent(pathLab9, "p1", "output");
+}
+
+function lab9LoadSecondArticle() {
+    fetchContent(pathLab9, "p2", "output");
+}
+
+function lab9LoadThirdArticle() {
+    fetchContent(pathLab9, "p3", "output");
+}
