@@ -257,10 +257,6 @@ function lab5SortArr() {
     updateDivContentWithContent(arr, "output")
 }
 
-function lab5LoadThirdArticlePart4() {
-    fetchContent(pathInitContent, "p2-4", "side-btn-wrapper");
-}
-
 function generateRandomArray(length) {
     let array = [];
     for (let i = 0; i < length; i++) {
@@ -308,3 +304,306 @@ function addTooltip() {
         alert('Елемент з вказаним ID не знайдено.');
     }
 }
+
+// ---------------------------------------------------------------------------------------------------------------------
+// ------------------------------------------------------ LAB5-1 -------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
+const pathLab5_1 = "reports/lab5-1.html"
+
+function lab5_1_LoadFirstArticle() {
+    fetchContent(pathLab5_1, "p1", "output");
+}
+
+function lab5_1_LoadSecondArticle() {
+    fetchContent(pathLab5_1, "p2", "output")
+}
+
+function lab5_1_LoadThirdArticle() {
+    fetchContent(pathLab5_1, "p3-btn", "side-btn-wrapper");
+}
+
+function lab5_1_LoadConclusions() {
+    fetchContent(pathLab5_1, "lab5-1-conclusions", "output")
+}
+
+function lab5_1BackAndLoadSidebar() {
+    fetchContent(pathInitContent, "lab5-1-sidebar", "side-btn-wrapper");
+}
+
+function lab5_1_Load_3_2() {
+    fetchContent(pathLab5_1, "p3-2", "output")
+}
+
+function lab5_1_Load_3_4() {
+    fetchContent(pathLab5_1, "p3-4", "output")
+    showInitialData();
+}
+
+function lab5_1_Load_3_6() {
+    fetchContent(pathLab5_1, "p3-6", "output")
+    showOriginalMedicines();
+}
+
+function lab5_1_Load_3_8() {
+    fetchContent(pathLab5_1, "p3-8", "output")
+    
+}
+
+function lab5_1_Load_3_10() {
+    fetchContent(pathLab5_1, "p3-10", "output")
+}
+
+// TASK 2
+function getProductDetails(productId, successCallback, errorCallback) {
+    // Перевірка, чи існує товар з вказаним ідентифікатором productId
+    var products = {
+        1: {id: 1, name: "Product 1", price: 10},
+        2: {id: 2, name: "Product 2", price: 20},
+        3: {id: 3, name: "Product 3", price: 30}
+    };
+
+    var product = products[productId];
+
+    // Якщо товар існує, передаємо його деталі в successCallback
+    if (product) {
+        successCallback(product);
+    } else {
+        // Якщо товар не знайдено, викликаємо errorCallback з повідомленням про помилку
+        errorCallback("Товар з ідентифікатором " + productId + " не знайдено");
+    }
+}
+
+// Приклад функції getProductById, яка повертає деталі товару за його ідентифікатором
+function getProductById(productId) {
+    var products = {
+        1: {id: 1, name: "Product 1", price: 10},
+        2: {id: 2, name: "Product 2", price: 20},
+        3: {id: 3, name: "Product 3", price: 30}
+    };
+
+    return products[productId];
+}
+
+function getDetails() {
+    var productId = document.getElementById("productIdInput").value;
+
+    // Викликаємо функцію getProductDetails з відповідними колбеками
+    getProductDetails(productId,
+        // Колбек для успішного виконання
+        function (product) {
+            // Відображаємо деталі товару
+            document.getElementById("result").innerHTML = "<pre>" + JSON.stringify(product, null, 2) + "</pre>";
+        },
+        // Колбек для помилки
+        function (errorMessage) {
+            // Відображаємо повідомлення про помилку
+            document.getElementById("result").innerHTML = "<p style='color: red;'>" + errorMessage + "</p>";
+        }
+    );
+}
+
+// TASK 4
+const concerts = {
+    Київ: new Date("2020-04-01"),
+    Умань: new Date("2025-07-02"),
+    Вінниця: new Date("2020-04-21"),
+    Одеса: new Date("2025-03-15"),
+    Хмельницький: new Date("2020-04-18"),
+    Харків: new Date("2025-07-10"),
+};
+
+function showAllCities() {
+    const citiesContainer = document.getElementById("citiesContainer");
+    citiesContainer.innerHTML = ""; // Очистити контейнер
+
+    const citiesList = document.createElement("ul");
+    Object.keys(concerts).forEach((city, index) => {
+        const listItem = document.createElement("li");
+        listItem.textContent = `${index + 1}. ${city}`;
+        citiesList.appendChild(listItem);
+    });
+
+    citiesContainer.appendChild(citiesList);
+}
+
+function showUpcomingConcerts() {
+    const citiesContainer = document.getElementById("citiesContainer");
+    citiesContainer.innerHTML = ""; // Очистити контейнер
+
+    const upcomingCitiesList = document.createElement("ul");
+    Object.entries(concerts).forEach(([city, date], index) => {
+        const currentDate = new Date();
+        if (date > currentDate) {
+            const listItem = document.createElement("li");
+            listItem.textContent = `${index + 1}. ${city}`;
+            upcomingCitiesList.appendChild(listItem);
+        }
+    });
+
+    citiesContainer.appendChild(upcomingCitiesList);
+}
+
+// TASK 6
+const medicines = [
+    { name: "Noshpa", price: 170 },
+    { name: "Analgin", price: 55 },
+    { name: "Quanil", price: 310 },
+    { name: "Alphacholine", price: 390 },
+];
+
+function showOriginalMedicines() {
+    const medicinesContainer = document.getElementById("medicinesContainer");
+    medicinesContainer.innerHTML = ""; // Очистити контейнер
+
+    const originalList = document.createElement("ul");
+    originalList.id = "originalList";
+    medicines.forEach((medicine, index) => {
+        const listItem = document.createElement("li");
+        listItem.textContent = `${index + 1}. ${medicine.name} - ${medicine.price} грн`;
+        originalList.appendChild(listItem);
+    });
+
+    medicinesContainer.appendChild(originalList);
+}
+
+function applyDiscount() {
+    const medicinesContainer = document.getElementById("medicinesContainer");
+    medicinesContainer.innerHTML = ""; // Очистити контейнер
+
+    const discountedList = document.createElement("ul");
+    discountedList.id = "discountedList";
+    const discountedMedicines = getDiscountedMedicines();
+    discountedMedicines.forEach((medicine, index) => {
+        const listItem = document.createElement("li");
+        listItem.textContent = `${index + 1}. ${medicine.name} - ${medicine.price} грн`;
+        discountedList.appendChild(listItem);
+    });
+
+    medicinesContainer.appendChild(discountedList);
+}
+
+function showDiscountedMedicines() {
+    const medicinesContainer = document.getElementById("medicinesContainer");
+    medicinesContainer.innerHTML = ""; // Очистити контейнер
+
+    const discountedList = document.createElement("ul");
+    discountedList.id = "discountedList";
+    const discountedMedicines = getDiscountedMedicines();
+    discountedMedicines.forEach((medicine, index) => {
+        const listItem = document.createElement("li");
+        listItem.textContent = `${index + 1}. ${medicine.name} - ${medicine.price} грн`;
+        discountedList.appendChild(listItem);
+    });
+
+    medicinesContainer.appendChild(discountedList);
+}
+
+function getDiscountedMedicines() {
+    return medicines.map((medicine, index) => {
+        const discountedPrice = medicine.price > 300 ? medicine.price * 0.7 : medicine.price;
+        return {
+            id: index + 1,
+            name: medicine.name,
+            price: discountedPrice
+        };
+    });
+}
+
+// TASK 8
+function Storage(initialItems) {
+    this.items = initialItems;
+
+    this.getItems = function() {
+        return this.items;
+    };
+
+    this.addItem = function(item) {
+        this.items.push(item);
+    };
+
+    this.removeItem = function(item) {
+        const index = this.items.indexOf(item);
+        if (index !== -1) {
+            this.items.splice(index, 1);
+        }
+    };
+}
+
+const initialItems = ["apple", "banana", "mango"];
+const storage = new Storage(initialItems);
+
+function displayItems() {
+    const itemsList = document.getElementById("itemsList");
+    itemsList.innerHTML = ""; // Очищаємо вміст
+
+    storage.getItems().forEach(item => {
+        const listItem = document.createElement("div");
+        listItem.textContent = item;
+        itemsList.appendChild(listItem);
+    });
+}
+
+function addItem() {
+    const newItemInput = document.getElementById("newItemInput");
+    const newItem = newItemInput.value.trim();
+    if (newItem !== "") {
+        storage.addItem(newItem);
+        displayItems();
+        newItemInput.value = ""; // Очищаємо поле вводу
+    }
+}
+
+function showItems() {
+    alert(storage.getItems().join(", "));
+}
+
+function clearItems() {
+    storage.items = [];
+    displayItems();
+}
+
+// TASK 10
+function checkBrackets(str) {
+    const stack = []; // Стек для відстеження відкритих дужок
+
+    // Мапа для відображення відкриваючих і закриваючих дужок
+    const bracketsMap = {
+        '(': ')',
+        '{': '}',
+        '[': ']'
+    };
+
+    // Перевірка кожного символу у рядку
+    for (let char of str) {
+        // Якщо символ - відкриваюча дужка, додаємо її до стеку
+        if (bracketsMap[char]) {
+            stack.push(char);
+        }
+        // Якщо символ - закриваюча дужка
+        else if (char === ')' || char === '}' || char === ']') {
+            // Перевіряємо, чи відповідає закриваюча дужка останній відкриваючій у стеку
+            const lastOpeningBracket = stack.pop();
+            if (!lastOpeningBracket || bracketsMap[lastOpeningBracket] !== char) {
+                return false; // Неправильне закривання дужок
+            }
+        }
+    }
+
+    // Перевірка, чи всі відкриваючі дужки були правильно закриті
+    return stack.length === 0;
+}
+
+function checkCode() {
+    const codeInput = document.getElementById("codeInput");
+    const code = codeInput.value.trim();
+    const result = document.getElementById("result-10");
+
+    if (checkBrackets(code)) {
+        result.textContent = "Brackets are correct!";
+        result.style.color = "green";
+    } else {
+        result.textContent = "Brackets are incorrect!";
+        result.style.color = "red";
+    }
+}
+

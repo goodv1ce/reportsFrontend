@@ -1,0 +1,184 @@
+<div id="p1">
+    <p>
+        <b style="font-size: 1.2em">Тема:</b>
+        Об'єкт. Методи об'єкта. Масив об'єктів. Деструктизація об'єктів. Callback. Стрілочні функції. Стрілочні функції
+        як колбеки.
+    </p>
+    <b style="font-size: 1.2em">Мета:</b>
+    <ul>
+        <li>
+            Придбати практичні навички роботи з об'єктами. Методи об'єкта. Callback. Стрілочні функції. Стрілочні
+            функції як колбеки. Реалізація програм засовами мови JavaScript
+        </li>
+    </ul>
+
+    <h3 style="font-size: 1.2em; margin: 0.5em 0">Місце розташування:</h3>
+    <ul>
+        <li>
+            Github репозиторій власного проекту:
+            <a href="https://github.com/goodv1ce/frontendApp" target="_blank">click</a>
+        </li>
+        <li>
+            Github репозиторій сторінки зі звітами:
+            <a href="https://github.com/goodv1ce/reportsFrontend" target="_blank">click</a>
+        </li>
+    </ul>
+</div>
+
+<div id="p2">
+    <b style="font-size: 1.2em">Завдання 2:</b>
+    <ol>
+        <li>
+            Напишіть функцію getProductDetails, яка приймає ідентифікатор товару productId та дві колбек-функції
+            successCallback та errorCallback.
+        </li>
+        <li>
+            Функція getProductDetails повинна отримати деталі про вказаний товар та передати їх у successCallback.
+        </li>
+        <li>
+            У випадку якщо товар не знайдено, викликається errorCallback і передається повідомлення про помилку.
+        </li>
+    </ol>
+    <b style="font-size: 1.2em">Завдання 4:</b>
+    <ol>
+        <li>
+            З об'єкту concerts отримати масив, який буде містити лише імена міст.
+            З масиву потрібно прибрати міста, в яких концерт уже пройшов і відсортувати їх у хронологічному порядку.
+            Результат вивести у консоль.
+        </li>
+        <li>
+            Очікуваний результат ["Одеса", "Умань", "Харків"]
+            Застосувати стрілочні функції
+            const concerts = {
+            Київ: new Date("2020-04-01"),
+            Умань: new Date("2025-07-02"),
+            Вінниця: new Date("2020-04-21"),
+            Одеса: new Date("2025-03-15"),
+            Хмельницький: new Date("2020-04-18"),
+            Харків: new Date("2025-07-10"),
+            };
+        </li>
+        <li>
+            У випадку якщо товар не знайдено, викликається errorCallback і передається повідомлення про помилку.
+        </li>
+    </ol>
+    <b style="font-size: 1.2em">Завдання 6:</b>
+    <ol>
+        <li>
+            Напишіть функцію, яка приймає массив об'єктів і повертає новий массив об'єктів,у якому є знижка на 30 % на
+            всі медикаменти ціна, яких перевищує 300 грн у масиві. Надайте ід для кожного медикамента
+
+            const medicines = [
+            { name: "Noshpa", price: 170 },
+            { name: "Analgin", price: 55 },
+            { name: "Quanil", price: 310 },
+            { name: "Alphacholine", price: 390 },
+            ];
+        </li>
+    </ol>
+    <b style="font-size: 1.2em">Завдання 8:</b>
+    <ol>
+        <li>
+            Напиши функцію конструктор Storage який створює об'єкти. Для управління складом товарів. При виклику
+            отримуватиме один агрумент - початковий масив товарів, і записувати їх у властивість items.
+        </li>
+        <li>
+            Додай методи класу:
+            getItems() - повертайте масив товарів
+            addItems(item) - отримує новий товар та додає його до поточних
+            removeItem(item) - отримує товар і, якщо він є, видаляє його з поточних
+            const arr = ["apple", "banana", "mango"]
+        </li>
+    </ol>
+    <b style="font-size: 1.2em">Завдання 10:</b>
+    <ol>
+        <li>
+            Напишіть функцію checkBrackets(str) яка приймає рядок жс коду (someFn) і перевіряє правильність закриття
+            дужок () {} []
+        </li>
+        <li>
+            Якщо рядок містить коректний код функція повертає true. В іншому випадку повертає false
+        </li>
+    </ol>
+</div>
+
+<div id="p3-2">
+    <h1>Product Details</h1>
+    <p>Enter product ID:</p>
+    <input type="text" id="productIdInput">
+    <button onclick="getDetails()">Get Details</button>
+    <div id="result"></div>
+</div>
+
+<div id="p3-4">
+    <h1>Concert Cities</h1>
+
+    <div id="citiesContainer">
+        <!-- Сюди буде додано вміст -->
+    </div>
+
+    <button onclick="showAllCities()">Показати всі міста</button>
+    <button onclick="showUpcomingConcerts()">Показати міста з майбутніми концертами</button>
+</div>
+
+<div id="p3-6">
+    <h1>Discounted Medicines</h1>
+
+    <div id="medicinesContainer">
+        <!-- Сюди буде додано вміст -->
+    </div>
+
+    <button onclick="showOriginalMedicines()">Показати початкові медикаменти</button>
+    <button onclick="applyDiscount()">Застосувати знижку</button>
+</div>
+
+<div id="p3-8">
+    <h1>Storage Management</h1>
+
+    <div id="itemsList">
+        <!-- Тут будуть відображатись елементи -->
+    </div>
+
+    <input type="text" id="newItemInput" placeholder="Enter new item">
+    <button onclick="addItem()">Add Item</button>
+
+    <button onclick="showItems()">Show Items</button>
+    <button onclick="clearItems()">Clear Items</button>
+</div>
+
+<div id="p3-10">
+    <h1>Check Brackets</h1>
+
+    <textarea id="codeInput" rows="4" cols="50" placeholder="Enter JavaScript code here..."></textarea>
+    <br>
+    <button onclick="checkCode()">Check Code</button>
+
+    <p id="result-10"></p>
+</div>
+
+<div id="p3-btn">
+    <button class="side-btn" onclick="lab5_1_Load_3_2()">Завдання 2</button>
+    <button class="side-btn" onclick="lab5_1_Load_3_4()">Завдання 4</button>
+    <button class="side-btn" onclick="lab5_1_Load_3_6()">Завдання 6</button>
+    <button class="side-btn" onclick="lab5_1_Load_3_8()">Завдання 8</button>
+    <button class="side-btn" onclick="lab5_1_Load_3_10()">Завдання 10</button>
+    <button class="side-btn" onclick="lab5_1BackAndLoadSidebar()">Назад</button>
+</div>
+
+<div id="lab5-conclusions">
+    <h2>Висновок з лабораторної роботи</h2>
+
+    <p>
+        У результаті виконання лабораторної роботи було розроблено низку функцій та відповідний HTML-код для їх
+        демонстрації. Під час створення були використані основні концепції JavaScript, такі як робота з масивами,
+        об'єктами, функціями та подіями. Кожна функція була перевірена та протестована, щоб забезпечити її коректну
+        роботу. HTML-сторінки були створені з урахуванням простоти використання та зручності взаємодії з користувачем,
+        дозволяючи легко тестувати різні функціональності.
+    </p>
+    <p>
+        У процесі виконання роботи було продемонстровано вміння використовувати JavaScript для вирішення різноманітних
+        завдань, від роботи з масивами та об'єктами до роботи з подіями користувача на сторінці. Також було показано
+        вміння структурувати код, щоб забезпечити чистоту та зрозумілість програми. Загалом, виконання лабораторної
+        роботи дозволило поглибити знання JavaScript та набути додатковий практичний досвід у розробці веб-додатків.
+    </p>
+</div>
