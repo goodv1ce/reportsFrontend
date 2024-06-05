@@ -23,8 +23,13 @@ function updateDivContentWithFunction(targetId, contentFunction) {
     const targetDiv = document.getElementById(targetId);
     if (targetDiv) {
         targetDiv.innerHTML = content;
-    } else {
-        console.error(`Div with id "${targetId}" not found.`);
+    }
+}
+
+function updateDivContentWithContent(array, targetId) {
+    let targetDiv = document.getElementById(targetId);
+    if (targetDiv) {
+        targetDiv.innerHTML = array.join(' '); // Join array elements with a space
     }
 }
 
@@ -206,9 +211,11 @@ function lab4LoadConclusions() {
 }
 
 // ---------------------------------------------------------------------------------------------------------------------
-// ------------------------------------------------------ LAB4 ---------------------------------------------------------
+// ------------------------------------------------------ LAB5 ---------------------------------------------------------
 // ---------------------------------------------------------------------------------------------------------------------
 const pathLab5 = "reports/lab5.html"
+let arr;
+let counter = 0
 
 function lab5LoadFirstArticle() {
     fetchContent(pathLab5, "p1", "output");
@@ -235,16 +242,19 @@ function lab5BackAndLoadSidebar() {
 }
 
 function lab5GenArr() {
-    let genArrFunction = () => generateRandomArray(100);
-    updateDivContentWithFunction("output", genArrFunction());
+    arr = generateRandomArray(100);
+    updateDivContentWithContent(arr, "output");
 }
 
-function lab5LoadThirdArticlePart2() {
-    fetchContent(pathInitContent, "p2-2", "side-btn-wrapper");
+function lab5findMinElemAndWriteAtStartOfArr() {
+    moveMinToFront(arr, counter)
+    counter++
+    updateDivContentWithContent(arr, "output")
 }
 
-function lab5LoadThirdArticlePart3() {
-    fetchContent(pathInitContent, "p2-3", "side-btn-wrapper");
+function lab5SortArr() {
+    selectionSort(arr)
+    updateDivContentWithContent(arr, "output")
 }
 
 function lab5LoadThirdArticlePart4() {
@@ -259,16 +269,16 @@ function generateRandomArray(length) {
     return array
 }
 
-function moveMinToFront(array) {
-    let minIndex = 0;
-    for (let i = 1; i < array.length; i++) {
+function moveMinToFront(array, startIndex) {
+    let minIndex = startIndex;
+    for (let i = startIndex + 1; i < array.length; i++) {
         if (array[i] < array[minIndex]) {
             minIndex = i;
         }
     }
     const minValue = array[minIndex];
     array.splice(minIndex, 1);
-    array.unshift(minValue);
+    array.splice(startIndex, 0, minValue);
 }
 
 function selectionSort(array) {
@@ -277,7 +287,24 @@ function selectionSort(array) {
     }
 }
 
-const arr = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5];
-console.log("Before sorting:", arr);
-selectionSort(arr);
-console.log("After sorting:", arr)
+function addTooltip() {
+    const tooltipText = document.getElementById('tooltipText').value;
+    const targetElementId = document.getElementById('targetElementId').value;
+    const targetElement = document.getElementById(targetElementId);
+
+    if (targetElement) {
+        // Create a span element for the tooltip text
+        const span = document.createElement('span');
+        span.classList.add('tooltiptext');
+        span.textContent = tooltipText;
+
+        // Wrap the target element with a tooltip container
+        const wrapper = document.createElement('div');
+        wrapper.classList.add('tooltip');
+        targetElement.parentNode.insertBefore(wrapper, targetElement);
+        wrapper.appendChild(targetElement);
+        wrapper.appendChild(span);
+    } else {
+        alert('Елемент з вказаним ID не знайдено.');
+    }
+}

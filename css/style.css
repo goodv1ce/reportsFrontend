@@ -64,11 +64,41 @@ header {
     border: 1px solid #aaa;
     text-align: left;
     width: 95%;
+    word-wrap: break-word; /* Дозволяє переносити слова, якщо вони занадто довгі */
 }
 
-.wrapper {;
+.wrapper {
     display: grid;
     grid-template-columns: 20% 80%;
     grid-template-rows: 100px auto;
+}
+
+/* styles.css */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 140px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position the tooltip above the text */
+    left: 50%;
+    margin-left: -70px; /* Center the tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
 }
 
